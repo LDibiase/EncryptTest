@@ -1,15 +1,20 @@
-﻿namespace EncryptTest
+﻿using System;
+using System.Linq;
+using Microsoft.SqlServer.Server;
+
+namespace EncryptTest
 {
     public class LINQEncrypt : IEncrypt
     {
         public string Encrypt(string stringToEncrypt)
         {
-            return string.Empty;
+            return new string(stringToEncrypt.ToCharArray().Reverse().ToArray());
         }
 
         public string Decrypt(string stringToDecrypt)
         {
-            return string.Empty;
+            return Encrypt(stringToDecrypt);
         }
+
     }
 }
