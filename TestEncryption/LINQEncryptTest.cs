@@ -11,13 +11,14 @@ namespace TestEncryption
         public void LINQEncription_OK()
         {
             string actual = "Testing";
-            string expected = "gnitseT";
+            int actualLength = actual.Length;
+            
             string result = string.Empty;
 
             LINQEncrypt linqEncryptator = new LINQEncrypt();
             result = linqEncryptator.Encrypt(actual);
 
-            Assert.AreEqual(expected, result);
+            Assert.AreNotEqual(actualLength, result.Length);
         }
     }
 }
